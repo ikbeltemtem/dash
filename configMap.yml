@@ -1,0 +1,12 @@
+{{- range $path := .Files.Glob "json/*.json" }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $path.Base | trimSuffix ".json" }}
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  {{ $path.Base }}: |
+{{ $path | readFile | nindent 4 }}
+{{- end }}
