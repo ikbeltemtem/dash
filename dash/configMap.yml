@@ -1,12 +1,13 @@
-{{- range $path := .Files.Glob "json/*.json" }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ $path.Base | trimSuffix ".json" }}
+  name: my-configmap  # This name will be overridden by the generated ConfigMap names
   namespace: monitoring
   labels:
     grafana_dashboard: "1"
 data:
-  {{ $path.Base }}: |
+{{- range $path := .Files.Glob "json/*.json" }}
+  {{ $path.Base | trimSuffix ".json" }}: |
 {{ $path | readFile | nindent 4 }}
 {{- end }}
+
