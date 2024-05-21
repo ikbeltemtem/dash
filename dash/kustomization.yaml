@@ -6,6 +6,10 @@ configMapGenerator:
     files:
       - json/argocd.json
     # Specify labels for the generated ConfigMap
-    labels:
-      grafana_dashboard: "1"
+generatorOptions:
+  
+  labels:
+    grafana_dashboard: "1"    
+    
+
 
