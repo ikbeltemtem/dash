@@ -27,7 +27,7 @@
     },
     {
       "type": "datasource",
-      "id": "prometheus",
+      "id": "aea62cb7-8de6-4373-ba70-d9e14b2e7401",
       "name": "Prometheus",
       "version": "1.0.0"
     },
