@@ -5,7 +5,10 @@ configMapGenerator:
   - name: argocd-configmap
     files:
       - json/argocd.json
-    # Specify labels for the generated ConfigMap
+  - name: ingress-controller-configmap
+    files:
+      - json/ingress-controller.json    
+     
 generatorOptions:
   
   labels:
