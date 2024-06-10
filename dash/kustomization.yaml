@@ -7,7 +7,10 @@ configMapGenerator:
       - json/argocd.json
   - name: ingress-controller-configmap
     files:
-      - json/ingress-controller.json    
+      - json/ingress-controller.json
+  - name: cert-manager-configmap
+    files:
+      - json/cert-manager.json    
      
 generatorOptions:
   
